@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import StudentList from './components/StudentList';
+import FacultyList from './components/FacultyList';
 
 function App() {
+  const appContainerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+  };
+
+  const contentContainerStyle = {
+    flex: 1,
+    padding: '20px',
+    overflowY: 'auto',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={appContainerStyle}>
+        <Home />
+        <div style={contentContainerStyle}>
+          <Routes>
+            <Route path="/students" element={<StudentList />} />
+            <Route path="/faculty" element={<FacultyList />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
