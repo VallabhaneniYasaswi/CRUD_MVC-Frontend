@@ -1,5 +1,4 @@
 {
-  "proxy": "https://crud-mvc-backend.onrender.com",
   "name": "crud_mvc",
   "version": "0.1.0",
   "private": true,
