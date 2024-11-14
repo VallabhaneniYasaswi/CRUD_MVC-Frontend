@@ -1,4 +1,5 @@
 {
+  "postinstall": "npm install react-scripts",
   "name": "crud_mvc",
   "version": "0.1.0",
   "private": true,
